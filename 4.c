@@ -3,7 +3,7 @@ int main()
 {
     int num[4][13]={0},sum=0,sum2=0,i=0,j=0;
     do
-        {
+    {
         printf("Ingrese el numero del coche(0-12):\n");
         scanf("%d",&j);
         if(j>=1)
@@ -14,24 +14,34 @@ int main()
             scanf("%d",&num[i][j]);
         }
         else
-            {
-                break;
-            }
+        {
+            break;
         }
+    }
     while(j>=1);
     {
-        for(int i=1;i<=3;i++)
-            {
-                sum=0;
-        for(int j=1;j<=12;j++)
+        if(j<=1)
         {
-            printf("La recaudacion de la linea %d con el colectivo %d es de :%d \n",i,j,num[i][j]);
-            sum=sum+num[i][j];
+        for(int i=1;i<=3;i++)
+        {
+            sum=0;
+            for(int j=1;j<=12;j++)
+            {
+                if(num[i][j]>0)
+                {
+                    printf("La recaudacion de la linea %d con el colectivo %d es de :%d \n",i,j,num[i][j]);
+                    sum=sum+num[i][j];
+                }
+            }
+            if(num[i][j]>0)
+            {
+
+                printf("La recaudacion de la linea %d es de: %d\n",i,sum);
+            }
+                sum2=sum2+sum;
         }
-        printf("\n");
-        sum2=sum2+sum;
-        printf("La recaudacion de la linea %d es de: %d\n",i,sum);
-    }
+        }
+
     }
     printf("La recaudacion total es de: %d",sum2);
     return 0;
