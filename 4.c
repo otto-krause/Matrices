@@ -33,11 +33,7 @@ int main()
                     sum=sum+num[i][j];
                 }
             }
-            if(num[i][j]>0)
-            {
 
-                printf("La recaudacion de la linea %d es de: %d\n",i,sum);
-            }
                 sum2=sum2+sum;
         }
         }
